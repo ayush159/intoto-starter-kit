@@ -17,6 +17,9 @@ Here is a quick video on go. This video is a great staring point in understandin
 			```
 	and then navigate to localhost:8080/pkg/github.com/in-toto/in-toto-golang/in_toto/ to read about the documentation of go-lang implementation of in-toto.
 
+	Here is the link for in_Toto documentation.
+	https://github.com/in-toto/docs/blob/master/in-toto-spec.md
+
 5.	Entire codebase of this implementation is in in-toto folder of the repo.
 6.	After making any changes to the repo you can run below command from root project directory to test whether your changes are working correctly with other functionalities or breaking the code.
 			```
