@@ -15,7 +15,11 @@ Go implementation of in-toto is based on in-toto Python reference implementation
 	and then navigate to localhost:8080/pkg/github.com/in-toto/in-toto-golang/in_toto/ to read about the documentation of go-lang implementation of in-toto.
 
 5.	Entire codebase of this implementation is in in-toto folder of the repo.
-6.	After making any changes to the repo you can run below command to test whether your changes are working correctly with other functionalities or breaking the code.
+6.	After making any changes to the repo you can run below command from root project directory to test whether your changes are working correctly with other functionalities or breaking the code.
 			```
 			go test ./...
 			```
+or you can run ```
+			go test
+			```
+			from the in_toto directory.
