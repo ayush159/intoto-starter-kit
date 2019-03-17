@@ -1,8 +1,11 @@
-## Details about Go-Implementation of In-toto
+## Getting started with in_toto golang version
 
 Go implementation of in-toto is based on in-toto Python reference implementation. Below are the steps to setup this implementation in your local machine and test it.
 
 1.	Install Go tools(version 1.11) in your local machine. Follow the installation method from this link -> https://golang.org/doc/install
+
+Here is a quick video on go. This video is a great staring point in understanding basic go concepts https://www.youtube.com/watch?v=C8LgvuEBraI&t=724s
+
 2.	Once installed successfully, you should be able to use 'go' as a command on your terminal just like 'git'.
 3.	Now clone in-toto-golang repository in your local machine by running below command:
 			```
