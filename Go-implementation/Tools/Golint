@@ -1,1 +1,22 @@
-// about golint, installation and sample output.
+Golint is a tool that checks for styles mistakes in the go codebase.
+
+For example, it’ll report you when a public method doesn’t have any comment. If there is a comment, it reports if you don’t follow the best practice. If you wrote a method called newJsonData(), it’ll report you that it is a better practice to write newJSONData(), and so on.
+
+
+Here is the link to download golint https://github.com/golang/lint or follow the steps below.
+
+Execute the following command: go get -u golang.org/x/lint/golint to download golint package locally.
+
+This places the binary in the bin folder of go. At this time golint is ready to be used.
+
+Move to the project directory and execute "golint `folder name`".
+
+Sample errors that we got when golint was run on in-toto project.
+
+10-18-120-252:in-toto-golang vaibhavlodha$ golint in_toto/
+in_toto/canonicaljson.go:1:1: don't use an underscore in package name
+in_toto/canonicaljson.go:80:12: should omit 2nd value from range; this loop is equivalent to `for key := range ...`
+in_toto/canonicaljson_test.go:1:1: don't use an underscore in package name
+in_toto/examples_test.go:1:1: don't use an underscore in package name
+in_toto/in_toto_test.go:1:1: don't use an underscore in package name
+in_toto/keylib.go:1:1: don't use an underscore in package name
