@@ -1,0 +1,9 @@
+// Contains the information about running and getting the documentation from the intoto-code 
+--> What is goDoc ?
+Godoc extracts and generates documentation for Go programs.
+
+
+--> Reference Link : https://blog.golang.org/godoc-documenting-go-code
+
+We can use the following the command to get our code's documentation.
+godoc -http=:8082 -goroot=$HOME/go

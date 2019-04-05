@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>in_toto - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css">
+
+
+<script>window.initFuncs = [];</script>
+
+<script src="/lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.12.1";</script>
+<script src="/lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/">Go</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="/search">
+<div id="menu">
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+
+<a href="/blog/">Blog</a>
+
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package in_toto
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "in-toto-golang/in_toto"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package in_toto implements types and routines to verify a software supply chain
+according to the in-toto specification.
+See <a href="https://github.com/in-toto/docs/blob/master/in-toto-spec.md">https://github.com/in-toto/docs/blob/master/in-toto-spec.md</a>
+</p>
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+				<dd><a href="#pkg-constants">Constants</a></dd>
+			
+			
+			
+				
+				<dd><a href="#FnFilter">func FnFilter(pattern string, names []string) []string</a></dd>
+			
+				
+				<dd><a href="#LoadLinksForLayout">func LoadLinksForLayout(layout Layout, linkDir string) (map[string]map[string]Metablock, error)</a></dd>
+			
+				
+				<dd><a href="#ParseRSAPublicKeyFromPEM">func ParseRSAPublicKeyFromPEM(pemBytes []byte) (*rsa.PublicKey, error)</a></dd>
+			
+				
+				<dd><a href="#RecordArtifact">func RecordArtifact(path string) (map[string]interface{}, error)</a></dd>
+			
+				
+				<dd><a href="#RecordArtifacts">func RecordArtifacts(paths []string, depth int) (map[string]interface{}, error)</a></dd>
+			
+				
+				<dd><a href="#ReduceStepsMetadata">func ReduceStepsMetadata(layout Layout, stepsMetadata map[string]map[string]Metablock) (map[string]Metablock, error)</a></dd>
+			
+				
+				<dd><a href="#RunCommand">func RunCommand(cmdArgs []string) (map[string]interface{}, error)</a></dd>
+			
+				
+				<dd><a href="#RunInspections">func RunInspections(layout Layout) (map[string]Metablock, error)</a></dd>
+			
+				
+				<dd><a href="#Subtract">func Subtract(a []string, b []string) []string</a></dd>
+			
+				
+				<dd><a href="#UnpackRule">func UnpackRule(rule []string) (map[string]string, error)</a></dd>
+			
+				
+				<dd><a href="#VerifyArtifacts">func VerifyArtifacts(items []interface{}, itemsMetadata map[string]Metablock) error</a></dd>
+			
+				
+				<dd><a href="#VerifyLayoutExpiration">func VerifyLayoutExpiration(layout Layout) error</a></dd>
+			
+				
+				<dd><a href="#VerifyLayoutSignatures">func VerifyLayoutSignatures(layoutMb Metablock, layoutKeys map[string]Key) error</a></dd>
+			
+				
+				<dd><a href="#VerifyLinkSignatureThesholds">func VerifyLinkSignatureThesholds(layout Layout, stepsMetadata map[string]map[string]Metablock) (map[string]map[string]Metablock, error)</a></dd>
+			
+				
+				<dd><a href="#VerifySignature">func VerifySignature(key Key, sig Signature, data []byte) error</a></dd>
+			
+				
+				<dd><a href="#VerifyStepCommandAlignment">func VerifyStepCommandAlignment(layout Layout, stepsMetadata map[string]map[string]Metablock)</a></dd>
+			
+				
+				<dd><a href="#VerifySublayouts">func VerifySublayouts(layout Layout, stepsMetadataVerified map[string]map[string]Metablock, superLayoutLinkPath string) (map[string]map[string]Metablock, error)</a></dd>
+			
+				
+				<dd><a href="#WaitErrToExitCode">func WaitErrToExitCode(err error) int</a></dd>
+			
+			
+				
+				<dd><a href="#Inspection">type Inspection</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Key">type Key</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Key.LoadPublicKey">func (k *Key) LoadPublicKey(path string) error</a></dd>
+				
+			
+				
+				<dd><a href="#KeyVal">type KeyVal</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Layout">type Layout</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Layout.InspectAsInterfaceSlice">func (l *Layout) InspectAsInterfaceSlice() []interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Layout.StepsAsInterfaceSlice">func (l *Layout) StepsAsInterfaceSlice() []interface{}</a></dd>
+				
+			
+				
+				<dd><a href="#Link">type Link</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Metablock">type Metablock</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#GetSummaryLink">func GetSummaryLink(layout Layout, stepsMetadataReduced map[string]Metablock, stepName string) (Metablock, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#InTotoRun">func InTotoRun(name string, materialPaths []string, productPaths []string, cmdArgs []string) (Metablock, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#InTotoVerify">func InTotoVerify(layoutMb Metablock, layoutKeys map[string]Key, linkDir string, stepName string) (Metablock, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Metablock.Dump">func (mb *Metablock) Dump(path string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Metablock.GetSignableRepresentation">func (mb *Metablock) GetSignableRepresentation() ([]byte, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Metablock.Load">func (mb *Metablock) Load(path string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Metablock.VerifySignature">func (mb *Metablock) VerifySignature(key Key) error</a></dd>
+				
+			
+				
+				<dd><a href="#Set">type Set</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewSet">func NewSet(elems ...string) Set</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Add">func (s Set) Add(elem string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Difference">func (s Set) Difference(s2 Set) Set</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Filter">func (s Set) Filter(pattern string) Set</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Has">func (s Set) Has(elem string) bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Intersection">func (s Set) Intersection(s2 Set) Set</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Remove">func (s Set) Remove(elem string)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Set.Slice">func (s Set) Slice() []string</a></dd>
+				
+			
+				
+				<dd><a href="#Signature">type Signature</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Step">type Step</a></dd>
+				
+				
+			
+				
+				<dd><a href="#SupplyChainItem">type SupplyChainItem</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h3>Examples</h3>
+			<div class="js-expandAll expandAll collapsed">(Expand All)</div>
+			<dl>
+			
+			<dd><a class="exampleLink" href="#example_InTotoVerify">InTotoVerify</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/in-toto-golang/in_toto/canonicaljson.go">canonicaljson.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/keylib.go">keylib.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/model.go">model.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/rulelib.go">rulelib.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/runlib.go">runlib.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/util.go">util.go</a>
+			
+				<a href="/src/in-toto-golang/in_toto/verifylib.go">verifylib.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+			<h2 id="pkg-constants">Constants</h2>
+			
+				<p>
+LinkNameFormat represents a format string used to create the filename for a
+signed Link (wrapped in a Metablock). It consists of the name of the link and
+the first 8 characters of the signing key id.  LinkNameFormatShort is for links
+that are not signed, e.g.:
+</p>
+<pre>fmt.Sprintf(LinkNameFormat, &#34;package&#34;,
+    &#34;2f89b9272acfc8f4a0a0f094d789fdb0ba798b0fe41f2f5f417c12f0085ff498&#34;)
+// returns &#34;package.2f89b9272.link&#34;
+
+fmt.Sprintf(LinkNameFormatShort, &#34;unsigned&#34;)
+// returns &#34;unsigned.link&#34;
+</pre>
+
+				<pre>const <span id="LinkNameFormat">LinkNameFormat</span> = &#34;%s.%.8s.link&#34;</pre>
+			
+				
+				<pre>const <span id="LinkNameFormatShort">LinkNameFormatShort</span> = &#34;%s.link&#34;</pre>
+			
+				
+				<pre>const <span id="SublayoutLinkDirFormat">SublayoutLinkDirFormat</span> = &#34;%s.%.8s&#34;</pre>
+			
+		
+		
+		
+			
+			
+			<h2 id="FnFilter">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=2413:2467#L73">FnFilter</a>
+				<a class="permalink" href="#FnFilter">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func FnFilter(pattern <a href="/pkg/builtin/#string">string</a>, names []<a href="/pkg/builtin/#string">string</a>) []<a href="/pkg/builtin/#string">string</a></pre>
+			<p>
+FnFilter is a helper function that mimics fnmatch.filter from the Python
+standard library using Go Match from the path/filepath package.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LoadLinksForLayout">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=16495:16592#L471">LoadLinksForLayout</a>
+				<a class="permalink" href="#LoadLinksForLayout">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func LoadLinksForLayout(layout <a href="#Layout">Layout</a>, linkDir <a href="/pkg/builtin/#string">string</a>) (
+    map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+LoadLinksForLayout loads for every Step of the passed Layout a Metablock
+containing the corresponding Link.  A base path to a directory that contains
+the links may be passed using linkDir.  Link file names are constructed,
+using LinkNameFormat together with the corresponding step name and authorized
+functionary key ids.  A map of link metadata is returned and has the following
+format:
+</p>
+<pre>{
+  &lt;step name&gt; : {
+    &lt;key id&gt;: Metablock,
+    &lt;key id&gt;: Metablock,
+    ...
+  },
+  &lt;step name&gt; : {
+    &lt;key id&gt;: Metablock,
+    &lt;key id&gt;: Metablock,
+    ...
+  }
+  ...
+}
+</pre>
+<p>
+If a link cannot be loaded at a constructed link name or is invalid, it is
+ignored. Only a preliminary threshold check is performed, that is, if there
+aren&#39;t at least Threshold links for any given step, the first return value
+is an empty map of Metablock maps and the second return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ParseRSAPublicKeyFromPEM">func <a href="/src/in-toto-golang/in_toto/keylib.go?s=438:508#L13">ParseRSAPublicKeyFromPEM</a>
+				<a class="permalink" href="#ParseRSAPublicKeyFromPEM">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ParseRSAPublicKeyFromPEM(pemBytes []<a href="/pkg/builtin/#byte">byte</a>) (*<a href="/pkg/crypto/rsa/">rsa</a>.<a href="/pkg/crypto/rsa/#PublicKey">PublicKey</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ParseRSAPublicKeyFromPEM parses the passed pemBytes as e.g. read from a PEM
+formatted file, and instantiates and returns the corresponding RSA public key.
+If the no RSA public key can be parsed, the first return value is nil and the
+second return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RecordArtifact">func <a href="/src/in-toto-golang/in_toto/runlib.go?s=425:489#L15">RecordArtifact</a>
+				<a class="permalink" href="#RecordArtifact">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RecordArtifact(path <a href="/pkg/builtin/#string">string</a>) (map[<a href="/pkg/builtin/#string">string</a>]interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+RecordArtifact reads and hashes the contents of the file at the passed path
+using sha256 and returns a map in the following format:
+</p>
+<pre>{
+  &#34;&lt;path&gt;&#34;: {
+    &#34;sha256&#34;: &lt;hex representation of hash&gt;
+  }
+}
+</pre>
+<p>
+If reading the file fails, the first return value is nil and the second return
+value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RecordArtifacts">func <a href="/src/in-toto-golang/in_toto/runlib.go?s=1288:1367#L47">RecordArtifacts</a>
+				<a class="permalink" href="#RecordArtifacts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RecordArtifacts(paths []<a href="/pkg/builtin/#string">string</a>, depth <a href="/pkg/builtin/#int">int</a>) (map[<a href="/pkg/builtin/#string">string</a>]interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+RecordArtifacts walks through the passed slice of paths, traversing
+subdirectories, and calls RecordArtifact for each file.  It returns a map in
+the following format:
+</p>
+<pre>{
+  &#34;&lt;path&gt;&#34;: {
+    &#34;sha256&#34;: &lt;hex representation of hash&gt;
+  },
+  &#34;&lt;path&gt;&#34;: {
+    &#34;sha256&#34;: &lt;hex representation of hash&gt;
+  },
+  ...
+}
+</pre>
+<p>
+If recording an artifact fails the first return value is nil and the second
+return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReduceStepsMetadata">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=9927:10045#L288">ReduceStepsMetadata</a>
+				<a class="permalink" href="#ReduceStepsMetadata">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ReduceStepsMetadata(layout <a href="#Layout">Layout</a>,
+    stepsMetadata map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>) (map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>,
+    <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReduceStepsMetadata merges for each step of the passed Layout all the passed
+per-functionary links into a single link, asserting that the reported Materials
+and Products are equal across links for a given step.  This function may be
+used at a time during the overall verification, where link threshold&#39;s have
+been verified and subsequent verification only needs one exemplary link per
+step.  The function returns a map with one Metablock (link) per step:
+</p>
+<pre>{
+  &lt;step name&gt; : Metablock,
+  &lt;step name&gt; : Metablock,
+  ...
+}
+</pre>
+<p>
+If links corresponding to the same step report different Materials or different
+Products, the first return value is an empty Metablock map and the second
+return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RunCommand">func <a href="/src/in-toto-golang/in_toto/runlib.go?s=4416:4481#L145">RunCommand</a>
+				<a class="permalink" href="#RunCommand">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RunCommand(cmdArgs []<a href="/pkg/builtin/#string">string</a>) (map[<a href="/pkg/builtin/#string">string</a>]interface{}, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+RunCommand executes the passed command in a subprocess.  The first element of
+cmdArgs is used as executable and the rest as command arguments.  It captures
+and returns stdout, stderr and exit code.  The format of the returned map is:
+</p>
+<pre>{
+  &#34;return-value&#34;: &lt;exit code&gt;,
+  &#34;stdout&#34;: &#34;&lt;standard output&gt;&#34;,
+  &#34;stderr&#34;: &#34;&lt;standard error&gt;&#34;
+}
+</pre>
+<p>
+If the command cannot be executed or no pipes for stdout or stderr can be
+created the first return value is nil and the second return value is the error.
+NOTE: Since stdout and stderr are captured, they cannot be seen during the
+command execution.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RunInspections">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=977:1041#L23">RunInspections</a>
+				<a class="permalink" href="#RunInspections">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func RunInspections(layout <a href="#Layout">Layout</a>) (map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+RunInspections iteratively executes the command in the Run field of all
+inspections of the passed layout, creating unsigned link metadata that records
+all files found in the current working directory as materials (before command
+execution) and products (after command execution).  A map with inspection names
+as keys and Metablocks containing the generated link metadata as values is
+returned.  The format is:
+</p>
+<pre>{
+  &lt;inspection name&gt; : Metablock,
+  &lt;inspection name&gt; : Metablock,
+  ...
+}
+</pre>
+<p>
+If executing the inspection command fails, or if the executed command has a
+non-zero exit code, the first return value is an empty Metablock map and the
+second return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Subtract">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=1998:2044#L54">Subtract</a>
+				<a class="permalink" href="#Subtract">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Subtract(a []<a href="/pkg/builtin/#string">string</a>, b []<a href="/pkg/builtin/#string">string</a>) []<a href="/pkg/builtin/#string">string</a></pre>
+			<p>
+Subtract is a helper function that performs set subtraction
+TODO: This function has O(n**2), consider using maps (in linear-time)
+<a href="https://siongui.github.io/2018/03/14/go-set-difference-of-two-arrays/">https://siongui.github.io/2018/03/14/go-set-difference-of-two-arrays/</a>, or
+find a proper set library.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="UnpackRule">func <a href="/src/in-toto-golang/in_toto/rulelib.go?s=1458:1515#L34">UnpackRule</a>
+				<a class="permalink" href="#UnpackRule">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UnpackRule(rule []<a href="/pkg/builtin/#string">string</a>) (map[<a href="/pkg/builtin/#string">string</a>]<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+UnpackRule parses the passed rule and extracts and returns the information
+required for rule processing.  It can be used to verify if a rule has a valid
+format.  Available rule formats are:
+</p>
+<pre>MATCH &lt;pattern&gt; [IN &lt;source-path-prefix&gt;] WITH (MATERIALS|PRODUCTS)
+    [IN &lt;destination-path-prefix&gt;] FROM &lt;step&gt;,
+CREATE &lt;pattern&gt;,
+DELETE &lt;pattern&gt;,
+MODIFY &lt;pattern&gt;,
+ALLOW &lt;pattern&gt;,
+DISALLOW &lt;pattern&gt;
+</pre>
+<p>
+Rule tokens are normalized to lower case before returning.  The returned map
+has the following format:
+</p>
+<pre>{
+  &#34;type&#34;: &#34;match&#34; | &#34;create&#34; | &#34;delete&#34; |&#34;modify&#34; | &#34;allow&#34; | &#34;disallow&#34;
+  &#34;pattern&#34;: &#34;&lt;file name pattern&gt;&#34;,
+  &#34;srcPrefix&#34;: &#34;&lt;path or empty string&gt;&#34;, // MATCH rule only
+  &#34;dstPrefix&#34;: &#34;&lt;path or empty string&gt;&#34;, // MATCH rule only
+  &#34;dstType&#34;: &#34;materials&#34; | &#34;products&#34;&gt;, // MATCH rule only
+  &#34;dstName&#34;: &#34;&lt;step name&gt;&#34;, // Match rule only
+}
+</pre>
+<p>
+If the rule does not match any of the available formats the first return value
+is nil and the second return value is the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifyArtifacts">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=5988:6072#L173">VerifyArtifacts</a>
+				<a class="permalink" href="#VerifyArtifacts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifyArtifacts(items []interface{},
+    itemsMetadata map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+VerifyArtifacts iteratively applies the material and product rules of the
+passed items (step or inspection) to enforce and authorize artifacts (materials
+or products) reported by the corresponding link and to guarantee that
+artifacts are linked together across links.  In the beginning all artifacts are
+placed in a queue according to their type.  If an artifact gets consumed by a
+rule it is removed from the queue.  An artifact can only be consumed once by
+one set of rules.
+</p>
+<p>
+Rules of type MATCH, ALLOW and DISALLOW are supported.
+</p>
+<p>
+MATCH and ALLOW remove artifacts from the corresponding queues on success, and
+leave the queue unchanged on failure.  Hence, it is left to a subsequent
+DISALLOW rule to fail overall verification, if artifacts are left in the queue
+that should have been consumed by preceding rules.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifyLayoutExpiration">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=17461:17509#L505">VerifyLayoutExpiration</a>
+				<a class="permalink" href="#VerifyLayoutExpiration">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifyLayoutExpiration(layout <a href="#Layout">Layout</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+VerifyLayoutExpiration verifies that the passed Layout has not expired.  It
+returns an error if the (zulu) date in the Expires field is in the past.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifyLayoutSignatures">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=18132:18213#L524">VerifyLayoutSignatures</a>
+				<a class="permalink" href="#VerifyLayoutSignatures">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifyLayoutSignatures(layoutMb <a href="#Metablock">Metablock</a>,
+    layoutKeys map[<a href="/pkg/builtin/#string">string</a>]<a href="#Key">Key</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+VerifyLayoutSignatures verifies for each key in the passed key map the
+corresponding signature of the Layout in the passed Metablock&#39;s Signed field.
+Signatures and keys are associated by key id.  If the key map is empty, or the
+Metablock&#39;s Signature field does not have a signature for one or more of the
+passed keys, or a matching signature is invalid, an error is returned.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifyLinkSignatureThesholds">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=13588:13727#L391">VerifyLinkSignatureThesholds</a>
+				<a class="permalink" href="#VerifyLinkSignatureThesholds">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifyLinkSignatureThesholds(layout <a href="#Layout">Layout</a>,
+    stepsMetadata map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>) (
+    map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+VerifyLinkSignatureThesholds verifies that for each step of the passed layout,
+there are at least Threshold links, validly signed by different authorized
+functionaries.  The returned map of link metadata per steps contains only
+links with valid signatures from distinct functionaries and has the format:
+</p>
+<pre>{
+  &lt;step name&gt; : {
+    &lt;key id&gt;: Metablock,
+    &lt;key id&gt;: Metablock,
+    ...
+  },
+  &lt;step name&gt; : {
+    &lt;key id&gt;: Metablock,
+    &lt;key id&gt;: Metablock,
+    ...
+  }
+  ...
+}
+</pre>
+<p>
+If for any step of the layout there are not enough links available, the first
+return value is an empty map of Metablock maps and the second return value is
+the error.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifySignature">func <a href="/src/in-toto-golang/in_toto/keylib.go?s=3967:4030#L119">VerifySignature</a>
+				<a class="permalink" href="#VerifySignature">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifySignature(key <a href="#Key">Key</a>, sig <a href="#Signature">Signature</a>, data []<a href="/pkg/builtin/#byte">byte</a>) <a href="/pkg/builtin/#error">error</a></pre>
+			<p>
+VerifySignature uses the passed Key to verify the passed Signature over the
+passed data.  It returns an error if the key is not a valid RSA public key or
+if the signature is not valid for the data.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifyStepCommandAlignment">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=12027:12121#L345">VerifyStepCommandAlignment</a>
+				<a class="permalink" href="#VerifyStepCommandAlignment">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifyStepCommandAlignment(layout <a href="#Layout">Layout</a>,
+    stepsMetadata map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>)</pre>
+			<p>
+VerifyStepCommandAlignment (soft) verifies that for each step of the passed
+layout the command executed, as per the passed link, matches the expected
+command, as per the layout.  Soft verification means that, in case a command
+does not align, a warning is issued.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="VerifySublayouts">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=20013:20175#L577">VerifySublayouts</a>
+				<a class="permalink" href="#VerifySublayouts">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func VerifySublayouts(layout <a href="#Layout">Layout</a>,
+    stepsMetadataVerified map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>,
+    superLayoutLinkPath <a href="/pkg/builtin/#string">string</a>) (map[<a href="/pkg/builtin/#string">string</a>]map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+			<p>
+VerifySublayouts checks if any step in the supply chain is a sublayout, and if
+so, recursively resolves it and replaces it with a summary link summarizing the
+steps carried out in the sublayout.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WaitErrToExitCode">func <a href="/src/in-toto-golang/in_toto/runlib.go?s=3150:3187#L108">WaitErrToExitCode</a>
+				<a class="permalink" href="#WaitErrToExitCode">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func WaitErrToExitCode(err <a href="/pkg/builtin/#error">error</a>) <a href="/pkg/builtin/#int">int</a></pre>
+			<p>
+WaitErrToExitCode converts an error returned by Cmd.wait() to an exit code.  It
+returns -1 if no exit code can be inferred.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Inspection">type <a href="/src/in-toto-golang/in_toto/model.go?s=3129:3230#L83">Inspection</a>
+				<a class="permalink" href="#Inspection">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Inspection represents an in-toto supply chain inspection, whose command in the
+Run field is executed during final product verification, generating unsigned
+link metadata.  Materials and products used/produced by the inspection are
+constrained by the artifact rules in the inspection&#39;s ExpectedMaterials and
+ExpectedProducts fields.
+</p>
+
+			<pre>type Inspection struct {
+<span id="Inspection.Type"></span>    Type <a href="/pkg/builtin/#string">string</a>   `json:&#34;_type&#34;`
+<span id="Inspection.Run"></span>    Run  []<a href="/pkg/builtin/#string">string</a> `json:&#34;run&#34;`
+    <a href="#SupplyChainItem">SupplyChainItem</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Key">type <a href="/src/in-toto-golang/in_toto/model.go?s=655:919#L16">Key</a>
+				<a class="permalink" href="#Key">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Key represents a generic in-toto key that contains key metadata, such as an
+identifier, supported hash algorithms to create the identifier, the key type
+and the supported signature scheme, and the actual key value.
+</p>
+
+			<pre>type Key struct {
+<span id="Key.KeyId"></span>    KeyId               <a href="/pkg/builtin/#string">string</a>   `json:&#34;keyid&#34;`
+<span id="Key.KeyIdHashAlgorithms"></span>    KeyIdHashAlgorithms []<a href="/pkg/builtin/#string">string</a> `json:&#34;keyid_hash_algorithms&#34;`
+<span id="Key.KeyType"></span>    KeyType             <a href="/pkg/builtin/#string">string</a>   `json:&#34;keytype&#34;`
+<span id="Key.KeyVal"></span>    KeyVal              <a href="#KeyVal">KeyVal</a>   `json:&#34;keyval&#34;`
+<span id="Key.Scheme"></span>    Scheme              <a href="/pkg/builtin/#string">string</a>   `json:&#34;scheme&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Key.LoadPublicKey">func (*Key) <a href="/src/in-toto-golang/in_toto/keylib.go?s=1337:1383#L41">LoadPublicKey</a>
+					<a class="permalink" href="#Key.LoadPublicKey">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (k *<a href="#Key">Key</a>) LoadPublicKey(path <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+LoadPublicKey parses an RSA public key from a PEM formatted file at the passed
+path into the Key object on which it was called.  It returns an error if the
+file at path does not exist or is not a PEM formatted RSA public key.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="KeyVal">type <a href="/src/in-toto-golang/in_toto/model.go?s=345:432#L6">KeyVal</a>
+				<a class="permalink" href="#KeyVal">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+KeyVal contains the actual values of a key, as opposed to key metadata such as
+a key identifier or key type.  For RSA keys, the key value is a pair of public
+and private keys in PEM format stored as strings.  For public keys the Private
+field may be an empty string.
+</p>
+
+			<pre>type KeyVal struct {
+<span id="KeyVal.Private"></span>    Private <a href="/pkg/builtin/#string">string</a> `json:&#34;private&#34;`
+<span id="KeyVal.Public"></span>    Public  <a href="/pkg/builtin/#string">string</a> `json:&#34;public&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Layout">type <a href="/src/in-toto-golang/in_toto/model.go?s=4405:4665#L114">Layout</a>
+				<a class="permalink" href="#Layout">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Layout represents the definition of a software supply chain.  It lists the
+sequence of steps required in the software supply chain and the functionaries
+authorized to perform these steps.  Functionaries are identified by their
+public keys.  In addition, the layout may list a sequence of inspections that
+are executed during in-toto supply chain verification.  A layout should be
+contained in a generic Metablock object, which provides functionality for
+signing and signature verification, and reading from and writing to disk.
+</p>
+
+			<pre>type Layout struct {
+<span id="Layout.Type"></span>    Type    <a href="/pkg/builtin/#string">string</a>         `json:&#34;_type&#34;`
+<span id="Layout.Steps"></span>    Steps   []<a href="#Step">Step</a>         `json:&#34;steps&#34;`
+<span id="Layout.Inspect"></span>    Inspect []<a href="#Inspection">Inspection</a>   `json:&#34;inspect&#34;`
+<span id="Layout.Keys"></span>    Keys    map[<a href="/pkg/builtin/#string">string</a>]<a href="#Key">Key</a> `json:&#34;keys&#34;`
+<span id="Layout.Expires"></span>    Expires <a href="/pkg/builtin/#string">string</a>         `json:&#34;expires&#34;`
+<span id="Layout.Readme"></span>    Readme  <a href="/pkg/builtin/#string">string</a>         `json:&#34;readme&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Layout.InspectAsInterfaceSlice">func (*Layout) <a href="/src/in-toto-golang/in_toto/model.go?s=5162:5218#L135">InspectAsInterfaceSlice</a>
+					<a class="permalink" href="#Layout.InspectAsInterfaceSlice">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (l *<a href="#Layout">Layout</a>) InspectAsInterfaceSlice() []interface{}</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Layout.StepsAsInterfaceSlice">func (*Layout) <a href="/src/in-toto-golang/in_toto/model.go?s=4995:5049#L128">StepsAsInterfaceSlice</a>
+					<a class="permalink" href="#Layout.StepsAsInterfaceSlice">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (l *<a href="#Layout">Layout</a>) StepsAsInterfaceSlice() []interface{}</pre>
+				<p>
+Go does not allow to pass `[]T` (slice with certain type) to a function
+that accepts `[]interface{}` (slice with generic type)
+We have to manually create the interface slice first, see
+<a href="https://golang.org/doc/faq#convert_slice_of_interface">https://golang.org/doc/faq#convert_slice_of_interface</a>
+TODO: Is there a better way to do polymorphism for steps and inspections?
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Link">type <a href="/src/in-toto-golang/in_toto/model.go?s=1472:1868#L40">Link</a>
+				<a class="permalink" href="#Link">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Link represents the evidence of a supply chain step performed by a functionary.
+It should be contained in a generic Metablock object, which provides
+functionality for signing and signature verification, and reading from and
+writing to disk.
+</p>
+
+			<pre>type Link struct {
+<span id="Link.Type"></span>    Type        <a href="/pkg/builtin/#string">string</a>                 `json:&#34;_type&#34;`
+<span id="Link.Name"></span>    Name        <a href="/pkg/builtin/#string">string</a>                 `json:&#34;name&#34;`
+<span id="Link.Materials"></span>    Materials   map[<a href="/pkg/builtin/#string">string</a>]interface{} `json:&#34;materials&#34;`
+<span id="Link.Products"></span>    Products    map[<a href="/pkg/builtin/#string">string</a>]interface{} `json:&#34;products&#34;`
+<span id="Link.ByProducts"></span>    ByProducts  map[<a href="/pkg/builtin/#string">string</a>]interface{} `json:&#34;byproducts&#34;`
+<span id="Link.Command"></span>    Command     []<a href="/pkg/builtin/#string">string</a>               `json:&#34;command&#34;`
+<span id="Link.Environment"></span>    Environment map[<a href="/pkg/builtin/#string">string</a>]interface{} `json:&#34;environment&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Metablock">type <a href="/src/in-toto-golang/in_toto/model.go?s=5669:6503#L149">Metablock</a>
+				<a class="permalink" href="#Metablock">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Metablock is a generic container for signable in-toto objects such as Layout
+or Link.  It has two fields, one that contains the signable object and one that
+contains corresponding signatures.  Metablock also provides functionality for
+signing and signature verification, and reading from and writing to disk.
+</p>
+
+			<pre>type Metablock struct {
+    <span class="comment">// NOTE: Whenever we want to access an attribute of `Signed` we have to</span>
+    <span class="comment">// perform type assertion, e.g. `metablock.Signed.(Layout).Keys`</span>
+    <span class="comment">// Maybe there is a better way to store either Layouts or Links in `Signed`?</span>
+    <span class="comment">// The notary folks seem to have separate container structs:</span>
+    <span class="comment">// https://github.com/theupdateframework/notary/blob/master/tuf/data/root.go#L10-L14</span>
+    <span class="comment">// https://github.com/theupdateframework/notary/blob/master/tuf/data/targets.go#L13-L17</span>
+    <span class="comment">// I implemented it this way, because there will be several functions that</span>
+    <span class="comment">// receive or return a Metablock, where the type of Signed has to be inferred</span>
+    <span class="comment">// on runtime, e.g. when iterating over links for a layout, and a link can</span>
+    <span class="comment">// turn out to be a layout (sublayout)</span>
+<span id="Metablock.Signed"></span>    Signed     interface{} `json:&#34;signed&#34;`
+<span id="Metablock.Signatures"></span>    Signatures []<a href="#Signature">Signature</a> `json:&#34;signatures&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="GetSummaryLink">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=18906:19020#L547">GetSummaryLink</a>
+					<a class="permalink" href="#GetSummaryLink">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func GetSummaryLink(layout <a href="#Layout">Layout</a>, stepsMetadataReduced map[<a href="/pkg/builtin/#string">string</a>]<a href="#Metablock">Metablock</a>,
+    stepName <a href="/pkg/builtin/#string">string</a>) (<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+GetSummaryLink merges the materials of the first step (as mentioned in the
+layout) and the products of the last step and returns a new link. This link
+reports the materials and products and summarizes the overall software supply
+chain.
+NOTE: The assumption is that the steps mentioned in the layout are to be
+performed sequentially. So, the first step mentioned in the layout denotes what
+comes into the supply chain and the last step denotes what goes out.
+</p>
+
+				
+				
+			
+				
+				<h3 id="InTotoRun">func <a href="/src/in-toto-golang/in_toto/runlib.go?s=5553:5665#L183">InTotoRun</a>
+					<a class="permalink" href="#InTotoRun">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InTotoRun(name <a href="/pkg/builtin/#string">string</a>, materialPaths []<a href="/pkg/builtin/#string">string</a>, productPaths []<a href="/pkg/builtin/#string">string</a>,
+    cmdArgs []<a href="/pkg/builtin/#string">string</a>) (<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+InTotoRun executes commands, e.g. for software supply chain steps or
+inspections of an in-toto layout, and creates and returns corresponding link
+metadata.  Link metadata contains recorded products at the passed productPaths
+and materials at the passed materialPaths.  The returned link is wrapped in a
+Metablock object.  If command execution or artifact recording fails the first
+return value is an empty Metablock and the second return value is the error.
+NOTE: Currently InTotoRun cannot be used to sign Link metadata.
+</p>
+
+				
+				
+			
+				
+				<h3 id="InTotoVerify">func <a href="/src/in-toto-golang/in_toto/verifylib.go?s=22172:22289#L630">InTotoVerify</a>
+					<a class="permalink" href="#InTotoVerify">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func InTotoVerify(layoutMb <a href="#Metablock">Metablock</a>, layoutKeys map[<a href="/pkg/builtin/#string">string</a>]<a href="#Key">Key</a>,
+    linkDir <a href="/pkg/builtin/#string">string</a>, stepName <a href="/pkg/builtin/#string">string</a>) (<a href="#Metablock">Metablock</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+InTotoVerify can be used to verify an entire software supply chain according to
+the in-toto specification.  It requires the metadata of the root layout, a map
+that contains public keys to verify the root layout signatures, a path to a
+directory from where it can load link metadata files, which are treated as
+signed evidence for the steps defined in the layout, and a step name. The step
+name only matters for sublayouts, where it&#39;s important to associate the summary
+of that step with a unique name. The verification routine is as follows:
+</p>
+<p>
+1. Verify layout signature(s) using passed key(s)
+2. Verify layout expiration date
+3. Load link metadata files for steps of layout
+4. Verify signatures and signature thresholds for steps of layout
+5. Verify sublayouts recursively
+6. Verify command alignment for steps of layout (only warns)
+7. Verify artifact rules for steps of layout
+8. Execute inspection commands (generates link metadata for each inspection)
+9. Verify artifact rules for inspections of layout
+</p>
+<p>
+InTotoVerify returns a summary link wrapped in a Metablock object and an error
+value. If any of the verification routines fail, verification is aborted and
+error is returned. In such an instance, the first value remains an empty
+Metablock object.
+</p>
+<p>
+NOTE: Parameter substitution, artifact rules of type &#34;create&#34;, &#34;modify&#34;
+and &#34;delete&#34; are currently not supported.
+</p>
+
+				<div id="example_InTotoVerify" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+		
+		
+		
+			<p>Code:</p>
+			<pre class="code">package in_toto
+
+import (
+    &#34;fmt&#34;
+    &#34;os&#34;
+)
+
+<span class="comment">/*
+NOTE: The example code requires the following files to be in the current
+working directory: `demo.layout.template` (root layout), `alice.pub` (layout
+signature verification key), `write-code.776a00e2.link` and
+`package.2f89b927.link` (link metadata files), and `foo.tar.gz` (target file of
+final product). You can copy these files from
+https://github.com/in-toto/in-toto-golang/tree/master/test/data.
+*/</span>
+
+const LayoutPath = &#34;demo.layout.template&#34;
+const LayoutKeyPath = &#34;alice.pub&#34;
+const LinkDirectory = &#34;.&#34;
+
+func ExampleInTotoVerify() {
+    <span class="comment">// Load the layout verification key and create a map as is required by</span>
+    <span class="comment">// InTotoVerify.  The layout represents the root of trust so it is a good</span>
+    <span class="comment">// idea to sign it using multiple keys.</span>
+    var pubKey Key
+    pubKey.LoadPublicKey(LayoutKeyPath)
+    var layoutKeys = map[string]Key{
+        pubKey.KeyId: pubKey,
+    }
+
+    <span class="comment">// Perform in-toto software supply chain verification, using the provided</span>
+    <span class="comment">// test data.</span>
+    var layoutMb Metablock
+    if err := layoutMb.Load(LayoutPath); err != nil {
+        fmt.Printf(&#34;Unable to load layout metadata: %s&#34;, err)
+    }
+    if _, err := InTotoVerify(layoutMb, layoutKeys, LinkDirectory, &#34;&#34;); err != nil {
+        fmt.Printf(&#34;In-toto verification failed: %s&#34;, err)
+    } else {
+        fmt.Println(&#34;In-toto verification succeeded!&#34;)
+    }
+
+    <span class="comment">// During verification the inspection &#34;untar&#34; was executed, generating a</span>
+    <span class="comment">// corresponding link metadata file &#34;untar.link&#34;. You can safely remove it.</span>
+    os.Remove(&#34;untar.link&#34;)
+
+    <span class="comment">// Output: In-toto verification succeeded!</span>
+}
+</pre>
+			
+		
+	</div>
+</div>
+
+				
+			
+
+			
+				
+				<h3 id="Metablock.Dump">func (*Metablock) <a href="/src/in-toto-golang/in_toto/model.go?s=8637:8681#L237">Dump</a>
+					<a class="permalink" href="#Metablock.Dump">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (mb *<a href="#Metablock">Metablock</a>) Dump(path <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+Dump JSON serializes and writes the Metablock on which it was called to the
+passed path.  It returns an error if JSON serialization or writing fails.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Metablock.GetSignableRepresentation">func (*Metablock) <a href="/src/in-toto-golang/in_toto/model.go?s=9265:9329#L259">GetSignableRepresentation</a>
+					<a class="permalink" href="#Metablock.GetSignableRepresentation">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (mb *<a href="#Metablock">Metablock</a>) GetSignableRepresentation() ([]<a href="/pkg/builtin/#byte">byte</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+GetSignableRepresentation returns the canonical JSON representation of the
+Signed field of the Metablock on which it was called.  If canonicalization
+fails the first return value is nil and the second return value is the error.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Metablock.Load">func (*Metablock) <a href="/src/in-toto-golang/in_toto/model.go?s=6721:6765#L169">Load</a>
+					<a class="permalink" href="#Metablock.Load">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (mb *<a href="#Metablock">Metablock</a>) Load(path <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+Load parses JSON formatted metadata at the passed path into the Metablock
+object on which it was called.  It returns an error if it cannot parse
+a valid JSON formatted Metablock that contains a Link or Layout.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Metablock.VerifySignature">func (*Metablock) <a href="/src/in-toto-golang/in_toto/model.go?s=9705:9756#L270">VerifySignature</a>
+					<a class="permalink" href="#Metablock.VerifySignature">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (mb *<a href="#Metablock">Metablock</a>) VerifySignature(key <a href="#Key">Key</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+VerifySignature verifies the first signature, corresponding to the passed Key,
+that it finds in the Signatures field of the Metablock on which it was called.
+It returns an error if Signatures does not contain a Signature corresponding to
+the passed Key, the object in Signed cannot be canonicalized, or the Signature
+is invalid.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Set">type <a href="/src/in-toto-golang/in_toto/util.go?s=360:388#L5">Set</a>
+				<a class="permalink" href="#Set">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Set represents a data structure for set operations. See `NewSet` for how to
+create a Set, and available Set receivers for useful set operations.
+</p>
+<p>
+Under the hood Set aliases map[string]struct{}, where the map keys are the set
+elements and the map values are a memory-efficient way of storing the keys.
+</p>
+
+			<pre>type Set map[<a href="/pkg/builtin/#string">string</a>]struct{}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewSet">func <a href="/src/in-toto-golang/in_toto/util.go?s=497:529#L11">NewSet</a>
+					<a class="permalink" href="#NewSet">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewSet(elems ...<a href="/pkg/builtin/#string">string</a>) <a href="#Set">Set</a></pre>
+				<p>
+NewSet creates a new Set, assigns it the optionally passed variadic string
+elements, and returns it.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Set.Add">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=922:951#L33">Add</a>
+					<a class="permalink" href="#Set.Add">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Add(elem <a href="/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Add adds the passed string to the set on which it was called, if the string is
+not a member of the set.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Difference">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=1572:1607#L64">Difference</a>
+					<a class="permalink" href="#Set.Difference">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Difference(s2 <a href="#Set">Set</a>) <a href="#Set">Set</a></pre>
+				<p>
+Difference creates and returns a new Set with the elements of the set on
+which it was called that are not in the passed set.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Filter">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=1918:1957#L80">Filter</a>
+					<a class="permalink" href="#Set.Filter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Filter(pattern <a href="/pkg/builtin/#string">string</a>) <a href="#Set">Set</a></pre>
+				<p>
+Filter creates and returns a new Set with the elements of the set on which it
+was called that match the passed pattern. A matching error is treated like a
+non-match plus a warning is printed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Has">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=743:777#L24">Has</a>
+					<a class="permalink" href="#Set.Has">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Has(elem <a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Has returns True if the passed string is member of the set on which it was
+called and False otherwise.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Intersection">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=1282:1319#L49">Intersection</a>
+					<a class="permalink" href="#Set.Intersection">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Intersection(s2 <a href="#Set">Set</a>) <a href="#Set">Set</a></pre>
+				<p>
+Intersection creates and returns a new Set with the elements of the set on
+which it was called that are also in the passed set.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Remove">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=1093:1125#L41">Remove</a>
+					<a class="permalink" href="#Set.Remove">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Remove(elem <a href="/pkg/builtin/#string">string</a>)</pre>
+				<p>
+Remove removes the passed string from the set on which was is called, if the
+string is a member of the set.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Set.Slice">func (Set) <a href="/src/in-toto-golang/in_toto/util.go?s=2322:2351#L100">Slice</a>
+					<a class="permalink" href="#Set.Slice">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (s <a href="#Set">Set</a>) Slice() []<a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+Slice creates and returns an unordered string slice with the elements of the
+set on which it was called.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Signature">type <a href="/src/in-toto-golang/in_toto/model.go?s=1142:1223#L29">Signature</a>
+				<a class="permalink" href="#Signature">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Signature represents a generic in-toto signature that contains the identifier
+of the Key, which was used to create the signature and the signature data.  The
+used signature scheme is found in the corresponding Key.
+</p>
+
+			<pre>type Signature struct {
+<span id="Signature.KeyId"></span>    KeyId <a href="/pkg/builtin/#string">string</a> `json:&#34;keyid&#34;`
+<span id="Signature.Sig"></span>    Sig   <a href="/pkg/builtin/#string">string</a> `json:&#34;sig&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Step">type <a href="/src/in-toto-golang/in_toto/model.go?s=3651:3869#L97">Step</a>
+				<a class="permalink" href="#Step">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Step represents an in-toto step of the supply chain performed by a functionary.
+During final product verification in-toto looks for corresponding Link
+metadata, which is used as signed evidence that the step was performed
+according to the supply chain definition.  Materials and products used/produced
+by the step are constrained by the artifact rules in the step&#39;s
+ExpectedMaterials and ExpectedProducts fields.
+</p>
+
+			<pre>type Step struct {
+<span id="Step.Type"></span>    Type            <a href="/pkg/builtin/#string">string</a>   `json:&#34;_type&#34;`
+<span id="Step.PubKeys"></span>    PubKeys         []<a href="/pkg/builtin/#string">string</a> `json:&#34;pubkeys&#34;`
+<span id="Step.ExpectedCommand"></span>    ExpectedCommand []<a href="/pkg/builtin/#string">string</a> `json:&#34;expected_command&#34;`
+<span id="Step.Threshold"></span>    Threshold       <a href="/pkg/builtin/#int">int</a>      `json:&#34;threshold&#34;`
+    <a href="#SupplyChainItem">SupplyChainItem</a>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SupplyChainItem">type <a href="/src/in-toto-golang/in_toto/model.go?s=2599:2789#L70">SupplyChainItem</a>
+				<a class="permalink" href="#SupplyChainItem">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+SupplyChainItem summarizes common fields of the two available supply chain
+item types, Inspection and Step.
+</p>
+
+			<pre>type SupplyChainItem struct {
+<span id="SupplyChainItem.Name"></span>    Name              <a href="/pkg/builtin/#string">string</a>     `json:&#34;name&#34;`
+<span id="SupplyChainItem.ExpectedMaterials"></span>    ExpectedMaterials [][]<a href="/pkg/builtin/#string">string</a> `json:&#34;expected_materials&#34;`
+<span id="SupplyChainItem.ExpectedProducts"></span>    ExpectedProducts  [][]<a href="/pkg/builtin/#string">string</a> `json:&#34;expected_products&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.12.1.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+</body>
+</html>
+
